@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>ATM Machine</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>ATM Machine</h1>
+
+    <!-- Balance -->
+    <h3 id="balance">Balance: Rs. ******</h3>
+
+    <!-- Eye Icon -->
+    <i class="fa-solid fa-eye-slash"
+    id="eyeIcon"
+    onclick="showBalance()"></i>
+
+    <br><br>
+
+    <!-- Amount Input -->
+    <input type="number" id="amount">
+
+    <button onclick="withdraw()">Withdraw</button>
+
+    <button onclick="deposit()">Deposit</button>
+
+    <h2 id="message"></h2>
+
+    <script>
+
+        let balance = 10000;
+        let pin = 2061;
+
+        // Show / Hide Balance
+        function showBalance(){
+
+            let text =
+            document.getElementById("balance").innerHTML;
+
+            // Show balance
+            if(text == "Balance: Rs. ******"){
+
+                document.getElementById("balance").innerHTML =
+                "Balance: Rs. " + balance;
+
+                // Normal eye
+                document.getElementById("eyeIcon").className =
+                "fa-solid fa-eye";
+
+            }
+
+            // Hide balance
+            else{
+
+                document.getElementById("balance").innerHTML =
+                "Balance: Rs. ******";
+
+                // Cross eye
+                document.getElementById("eyeIcon").className =
+                "fa-solid fa-eye-slash";
+
+            }
+
+        }
+
+        // Withdraw Function
+        function withdraw(){
+
+            let enteredPin = prompt("Enter PIN");
+
+            if(enteredPin == pin){
+
+                let amount =
+                Number(document.getElementById("amount").value);
+
+                // Multiple of 100 check
+                if(amount % 100 != 0){
+
+                    document.getElementById("message").innerHTML =
+                    "Withdraw amount must be multiple of 100";
+
+                }
+
+                // 0 or negative check
+                else if(amount <= 0){
+
+                    document.getElementById("message").innerHTML =
+                    "Enter valid withdraw amount";
+
+                }
+
+                else{
+
+                    balance = balance - amount;
+
+                    document.getElementById("balance").innerHTML =
+                    "Balance: Rs. " + balance;
+
+                    document.getElementById("eyeIcon").className =
+                    "fa-solid fa-eye";
+
+                    document.getElementById("message").innerHTML =
+                    "Withdrawal Successful";
+
+                }
+
+            }
+
+            else{
+
+                document.getElementById("message").innerHTML =
+                "Incorrect PIN";
+
+            }
+
+        }
+
+        // Deposit Function
+        function deposit(){
+
+            let enteredPin = prompt("Enter PIN");
+
+            if(enteredPin == pin){
+
+                let amount =
+                Number(document.getElementById("amount").value);
+
+                // 0 or negative check
+                if(amount <= 0){
+
+                    document.getElementById("message").innerHTML =
+                    "Deposit amount must be greater than 0";
+
+                }
+
+                else{
+
+                    balance = balance + amount;
+
+                    document.getElementById("balance").innerHTML =
+                    "Balance: Rs. " + balance;
+
+                    document.getElementById("eyeIcon").className =
+                    "fa-solid fa-eye";
+
+                    document.getElementById("message").innerHTML =
+                    "Deposit Successful";
+
+                }
+
+            }
+
+            else{
+
+                document.getElementById("message").innerHTML =
+                "Incorrect PIN";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
