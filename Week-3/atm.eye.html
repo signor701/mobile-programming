@@ -16,17 +16,14 @@
 
     <h1>ATM Machine</h1>
 
-    <!-- Balance -->
     <h3 id="balance">Balance: Rs. ******</h3>
 
-    <!-- Eye Icon -->
     <i class="fa-solid fa-eye-slash"
     id="eyeIcon"
     onclick="showBalance()"></i>
 
     <br><br>
 
-    <!-- Amount Input -->
     <input type="number" id="amount">
 
     <button onclick="withdraw()">Withdraw</button>
@@ -40,31 +37,26 @@
         let balance = 10000;
         let pin = 2061;
 
-        // Show / Hide Balance
         function showBalance(){
 
             let text =
             document.getElementById("balance").innerHTML;
 
-            // Show balance
             if(text == "Balance: Rs. ******"){
 
                 document.getElementById("balance").innerHTML =
                 "Balance: Rs. " + balance;
 
-                // Normal eye
                 document.getElementById("eyeIcon").className =
                 "fa-solid fa-eye";
 
             }
 
-            // Hide balance
             else{
 
                 document.getElementById("balance").innerHTML =
                 "Balance: Rs. ******";
 
-                // Cross eye
                 document.getElementById("eyeIcon").className =
                 "fa-solid fa-eye-slash";
 
@@ -72,7 +64,7 @@
 
         }
 
-        // Withdraw Function
+
         function withdraw(){
 
             let enteredPin = prompt("Enter PIN");
@@ -82,7 +74,6 @@
                 let amount =
                 Number(document.getElementById("amount").value);
 
-                // Multiple of 100 check
                 if(amount % 100 != 0){
 
                     document.getElementById("message").innerHTML =
@@ -90,7 +81,6 @@
 
                 }
 
-                // 0 or negative check
                 else if(amount <= 0){
 
                     document.getElementById("message").innerHTML =
@@ -124,7 +114,6 @@
 
         }
 
-        // Deposit Function
         function deposit(){
 
             let enteredPin = prompt("Enter PIN");
