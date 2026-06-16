@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disney Gallery</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+.gallery {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 720px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<h1>✨ Disney Image Gallery ✨</h1>
+
+<div class="gallery">
+    <img src="https://lumiere-a.akamaihd.net/v1/images/disney-in_holiday_hero_sp_imgch1_a08dc91d.jpeg?region=0,0,750,863" alt="Disney Holiday">
+
+    <img src="https://res.klook.com/image/upload/c_crop,h_1020,w_1632,x_0,y_18,z_0.3/w_750,h_469,c_fill,q_85/activities/svlv1uxvh6mykzoob9bn.jpg" alt="Disneyland">
+
+    <img src="https://disneyexperiences.com/app/uploads/sites/7/2025/11/20251025_RH_065-1620x1080.jpg" alt="Zootopia">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKhFVcs_AJLrKwHrCU-oJoRodOVYYWh8K83g&s" alt="Mickey Mouse">
+
+    <img src="https://cdn1.parksmedia.wdprapps.disney.com/vision-dam/digital/parks-services/services-standard-assets/wdtc/walt-disney-world/disney-packages/fy27-early-booker-offer/fab-five-in-front-cinderella-castle-1x1.jpg?2026-03-16T12:54:36+00:00" alt="Disney Park">
+
+    <img src="https://i.ebayimg.com/images/g/QRIAAOSwqqBgamx9/s-l1200.jpg" alt="Disney Castle">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgvR0RrfefcH8oip8OQL7ESyrdkc6dRbur_g&s" alt="Disney Characters">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRip-opVSDZPjuv-ow2YEyML6k1EkE2IAdQ2A&s" alt="Bambi">
+</div>
+
+</body>
+</html>
